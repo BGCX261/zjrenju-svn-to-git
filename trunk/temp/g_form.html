@@ -1,0 +1,134 @@
+
+<table width = "100%" border="1" cellpadding="4" cellspacing="0" bordercolor="{$color['border']}" bgcolor="$color[cell]">
+<form action="g_new.php" name=gameform method="post">
+
+<tr>
+<td width="50%">规则(Rules)</td>
+<td ><select name="rules"  style="width:120">
+<option value="0">{$cfg['rules'][0]}</option>
+<option selected value="1">{$cfg['rules'][1]}</option>
+<option value="2">{$cfg['rules'][2]}</option>
+</select> 
+</td>
+</tr>
+
+<tr>
+<td>颜色(Color)</td>
+<td><select name="hostcolor" style="width:120">
+<option selected value="2">随机(Random)</option>
+<option value="1">黑(Black)</option>
+<option value="0">白(White)</option>
+</select>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>总限时(Limit)</td>
+<td><select name="timeadd"  style="width:120">
+<option value="10">10 分钟(Minutes)</option>
+<option value="15">15 分钟(Minutes)</option>
+<option value="20">20 分钟(Minutes)</option>
+<option value="30">30 分钟(Minutes)</option>
+<option value="60">1 小时(Hours)</option>
+<option value="120">2 小时(Hours)</option>
+<option value="180">3 小时(Hours)</option>
+<option value="240">5 小时(Hours)</option>
+<option value="480">8 小时(Hours)</option>
+<option value="720">12 小时(Hours)</option>
+<option value="1440">24 小时(Hours)</option>
+<option value="1680">28 小时(Hours)</option>
+<option value="2160">36 小时(Hours)</option>
+<option value="2880">48 小时(Hours)</option>
+<option value="4320">3 天(Days)</option>
+<option value="7200">5 天(Days)</option>
+<option value="10080">7 天(Days)</option>
+<option value="14400">10 天(Days)</option>
+<option value="20160">15 天(Days)</option>
+<option value="28800">20 天(Days)</option>
+<option value="43200">30 天(Days)</option>
+<option value="57600">40 天(Days)</option>
+<option value="72000">50 天(Days)</option>
+<option selected value="86400">60 天(Days)</option>
+<option value="100800">70 天(Days)</option>
+<option value="115200">80 天(Days)</option>
+<option value="129600">90 天(Days)</option>
+<option value="144000">100 天(Days)</option>
+<option value="172800">120 天(Days)</option>
+<option value="259200">180 天(Days)</option>
+<option value="525600">365 天(Days)</option>
+</select>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td >单步限时(Step limit)</td>
+<td><select name="timestep"  style="width:120">
+<option selected value="0">Unlimit</option>
+<option value="1440">1 天(Days)</option>
+<option value="2880">2 天(Days)</option>
+<option value="4320">3 天(Days)</option>
+<option value="7200">5 天(Days)</option>
+<option value="10080">7 天(Days)</option>
+<option value="14400">10 天(Days)</option>
+<option selected value="21600">15 天(Days)</option>
+</select> 
+</td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr>
+<td>积分限制(Rank limit)</td>
+<td><select name="skill_range"  style="width:120">
+<option selected value="-1">Unlimit</option>
+<option value="30">±30</option>
+<option value="50">±50</option>
+<option value="70">±70</option>
+<option value="100">±100</option>
+<option value="200">±200</option>
+<option value="300">±300</option>
+<option value="400">±400</option>
+</select>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>掉线率限制(Drop rate limit)</td>
+<td><select name="maxtout" style="width:120">
+<option selected value="100">Unlimit</option>
+<option value="25">&lt;25%</option>
+<option value="20">&lt;20%</option>
+<option value="15">&lt;15%</option>
+<option value="10">&lt;10%</option>
+<option value="5">&lt;5%</option>
+</select>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+
+<tr>
+<td>创建局数(Create game number)</td>
+<td><select name="gcreate"  style="width:120">
+<option selected value="1">1</option>
+{$gnumoption}
+</select>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+
+<td colspan="3" align="center">
+<input type="hidden" name="action" value="new2">
+<input type="submit" value="Create">
+
+</td>
+
+
+</tr>
+</form>
+</table>

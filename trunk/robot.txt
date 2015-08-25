@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /cache
+Disallow: /images
+Disallow: /log
+Disallow: /include
+Disallow: /renju
+Disallow: /temp
+

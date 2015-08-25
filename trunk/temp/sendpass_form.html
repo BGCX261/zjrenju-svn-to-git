@@ -1,0 +1,24 @@
+<table width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="m_man.php" name=regform method="post">
+<tr>
+	<td width="100"><b><label for="u_name">用户名</label></b></td>
+	<td><input type="text" size="20" maxlength="12" name="u_name" id="u_name" tabindex=1>
+	</td>
+</tr>
+
+<tr>
+	<td><b><label for="u_email">Email</label></b></td>
+	<td><input type="text" size="20" maxlength="60" name="u_email" id="u_email" tabindex=2>
+</tr>
+
+<tr>
+	<td>
+	&nbsp;
+	</td>
+	<td>
+	<input type="hidden" name="action" value="sendpass2">
+	<input type="submit" value="发送" >
+	</td>
+</tr>
+</form>
+</table>

@@ -1,0 +1,32 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" >
+<tr>
+<td>
+<b>提醒</b> 设置完后需要<a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a>
+</td>
+</tr>
+</table>
+
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]" bgcolor="$color[cell]">
+<tr bgcolor="$color[heading]">
+<td>
+允许屏蔽单个IP和D段IP，格式分别为 A.B.C.D 和  A.B.C.* 
+</td>
+</tr>
+
+<form action="index.php?mode=ip_man&action=unban" method="post">
+<tr>
+<td>$ban_ips
+</td>
+</tr>
+</form>
+
+<form action="index.php?mode=ip_man&action=ban" method="post">
+<tr>
+<td>屏蔽IP:<input type="text" size="15" maxlength="15" name="ban_ip">  
+原因(可选):<input type="text" size="40" maxlength="40" name="ban_reason"> 
+<input type="submit" value="屏蔽" >
+</td>
+</tr>
+</form>
+
+</table>

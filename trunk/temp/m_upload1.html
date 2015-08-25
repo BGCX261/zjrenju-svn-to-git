@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>上传头像</title>
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body background="./images/bg.jpg" bgcolor="$color[page]">
+
+<table style="table-layout: fixed" width = "95%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<tr bgcolor="$color[heading]" >
+<td>
+上传头像
+</td>
+</tr>
+</table>
+
+<table style="table-layout: fixed" width = "95%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<form enctype="multipart/form-data" name="faceform" action="m_upload.php" method="post">
+<tr>
+<td>
+
+<input type="hidden" name="MAX_FILE_SIZE" value="$cfg[avatar_size]">
+文件类型: GIF,JPG,PNG<br />
+文件大小: 小于$cfg[avatar_size]字节<br />
+图像大小: 小于$cfg[avatar_width]×$cfg[avatar_height]像素<br />
+
+<input name="userface" type="file">
+<input type="hidden" name="action" value="up2">
+<input type="submit" value="上传">
+</td>
+</tr>
+</form>
+</table>
+</body>
+</html>

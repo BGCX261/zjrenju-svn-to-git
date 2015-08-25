@@ -1,0 +1,44 @@
+<script language="javascript">
+<!--
+function CheckAllBox( check )
+{
+	for(i=1;i<=$pmnum;i++)
+	{
+		box=eval("document.all.checkbox_"+i);
+		box.checked=check;
+	}
+}
+//-->
+</script>
+
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]">
+<tr>
+<td>
+$link_inbox &nbsp;$link_outbox
+</td>
+<td align="right">
+{$pmnew}
+</td>
+</tr>
+</table>
+
+<table style="word-wrap: break-word" width = "100%" border="1"  cellspacing="0" cellpadding="4" bordercolor="{$color['border']}">
+<form name="pmview" action="pm_man.php?action=del&box=$box_type" method="post">
+<tr bgcolor="$color[heading]">
+<td colspan="4">短消息容量:$pmcount/$cfg[maxpm] | 收件人读过的消息*号会消失 | 从发件箱删除的消息对方将不能收到。</td></tr>
+</td>
+</tr>
+{$pmlist}
+</form>
+</table>
+
+<table width = "100%" border="0"  cellspacing="0" cellpadding ="4" bordercolor="{$color['border']}" >
+<tr >
+<td>
+<a href="JavaScript:CheckAllBox('checked')">全选</a>/<a href="JavaScript:CheckAllBox('')">全不选</a>&nbsp;<button onClick="document.pmview.submit()">删除</button>
+</td>
+<td align="right">
+{$pageinfo['pagebar']}
+</td>
+</tr>
+</table>

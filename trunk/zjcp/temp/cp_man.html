@@ -1,0 +1,25 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function ConfirmDelCP(cp_id)
+{
+	if(window.confirm("确定要删除吗? 此操作不能恢复."))
+	{
+		document.location.href="index.php?mode=cp_man&action=del&cp_id="+cp_id;
+	}
+}
+//-->
+</SCRIPT>
+
+<table style="word-break: break-all" width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}" bgcolor="$color[cell]" >
+$cplist
+</table>
+
+<table style="word-break: break-all" width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}">
+<tr>
+<td>
+[<a href="index.php?mode=cp_man&action=new1">创建</a>]
+</td>
+</tr>
+</table>
+
+

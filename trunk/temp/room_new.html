@@ -1,0 +1,38 @@
+<script language="javascript">
+<!--
+function JoinGame( gid )
+{
+	document.location.href="g_join.php?action=join&rules=$rules&page=$page&byname=$byname&gid="+gid;
+}
+//-->
+</script>
+
+<table border="0" cellspacing="0" cellpadding="5">
+<tr>
+<td>
+$ruleslink
+</td>
+</tr>
+</table>
+
+<table style="word-wrap: break-word" width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}"  bgcolor="$color[cell]">
+<tr bgcolor="{$color['heading']}" valign = "center" align="center">
+<td>规则</td> 
+<td>黑方</td> 
+<td>白方</td> 
+<td>限时</td> 
+<td>开局剩时</td> 
+</tr>
+
+{$glist}
+</table>
+
+<table width = "100%" border="0"  cellspacing="0" cellpadding ="4" bordercolor="{$color['border']}" >
+<tr >
+<td>
+<div align="right">
+{$pageinfo['pagebar']}
+</div>
+</td>
+</tr>
+</table>

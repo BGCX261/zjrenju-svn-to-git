@@ -1,0 +1,79 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+
+<tr>
+<td colspan="2">欢迎使用RBB后台控制</td>
+</tr>
+
+<tr>
+<td><a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a></td>
+<td>在改变设置后或者系统发生混乱时使用</td>
+</tr>
+
+
+<tr>
+<td><a href="index.php?mode=tools&action=optimize">整理数据库</a><br /></td>
+<td>建议一周一次</td>
+</tr>
+
+</table>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function ConfirmPmDel()
+{
+	dateline=document.pmdelform.dateline.value;
+	if(dateline<0)
+	{
+		window.alert("天数不能为负");
+		return;
+	}
+	
+	if(window.confirm('确定要删除'+dateline+'天前的短消息吗?'))
+		document.pmdelform.submit();
+}
+
+function ConfirmTopicDel()
+{
+	dateline=document.tdelform.dateline.value;
+	replyline=document.tdelform.replyline.value;
+	if(dateline<0)
+	{
+		window.alert("天数不能为负");
+		return;
+	}
+
+	if(replyline<0)
+	{
+		window.alert("回复不能为负");
+		return;
+	}
+
+	if(window.confirm('确定要删除'+dateline+'天前且回复少于'+replyline+'的话题吗?'))
+	{
+		if(dateline<30)
+		{
+			if(	window.confirm("警告: 天数太少!!真的要删除吗?"))
+				document.tdelform.submit();
+		}
+		else document.tdelform.submit();
+	}
+}
+//-->
+</SCRIPT>
+
+<!-- 隔 -->
+<table width = "100%" border="0" cellspacing="0"><tr height="10"><td >&nbsp;</td></tr></table>
+
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="index.php?mode=tools&action=pm_batch_del"  name="pmdelform" method="post">
+</tr>
+<td>
+删除 <input type="text" size=4 name="dateline" value="30"> 天前的短消息。 
+&nbsp;&nbsp;<input type="checkbox" name="keepnewpm" value="1" checked> 保留未读的 
+&nbsp;<button onclick="ConfirmPmDel();">Go</button>
+</td>
+</tr>
+</form>
+</table>
+

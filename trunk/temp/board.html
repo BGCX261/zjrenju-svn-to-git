@@ -1,0 +1,88 @@
+<table  width="100%" cellpadding="0" cellSpacing="0"  border = "1" bordercolor="{$color['border']}">
+<tr>
+<td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="4">
+	<tr>
+	<td>规则:$grules</td>
+	<td>交换:$gswaped</td>
+	<td align="center">限时:$gtimelimit</td>
+	<td align="right">日期:$gdate - $glastdate</td>
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+
+
+<!-- 外 -->
+<table width="100%" cellpadding="4" cellSpacing="0" border = "0" bordercolor="{$color['border']}" >
+<tr >
+<td >
+<!-- 棋盘 -->
+<table width="{$boardwidth}" cellpadding="" cellSpacing="0" border ="0" >
+<tr height="{$boardwidth}">
+<td background="{$rmdir}/board.gif">
+{$html_board}
+</td>
+</tr>
+</table>
+
+</td>
+
+<td width="100%" align="left" valign="top"  >
+
+{$panel}
+
+<input type="text" size="7" id="bf_status" readonly value="{$gdata['mcount']}/{$gdata['mcount']}" >
+&nbsp;<button  type="button" onclick="MoveToBegin()">始</button><button type="button" onclick="MoveBack()">←</button><button onclick="MoveForward()">→</button><button  type="button" type="button" onclick="MoveToEnd()">末</button>
+</td>
+</tr>
+</table>
+
+<table  width="100%" cellpadding="4" cellSpacing="0" border = "1" bordercolor="{$color['border']}" >
+<tr bgcolor="$color[heading]">
+<td>
+
+	<table width="100%" cellpadding="0" cellSpacing="0" border = "0"  >
+	<tr>
+	<form name="selboard" action="$thismode">
+		<td>
+		<select name="boardstyle" style="background:$color[heading]" onChange="document.selboard.submit()" >
+		<option selected>棋盘风格</option>
+		{$board_options}
+		</select>
+		<input type="hidden" name="gid" value="{$gid}">
+		</td>
+	</form>
+	</tr>
+	</table>
+
+</td>
+</tr>
+</table>
+
+<!-- 隔 -->
+<table width = "100%" border="0" cellspacing="0"><tr height="10"><td >&nbsp;</td></tr></table>
+
+<script language="javascript">
+<!--
+//这里是php传递过来的参数
+mcount = {$gdata['mcount']};
+curstep = {$gdata['mcount']};
+step5 ={$step5};
+black_f ="{$rmdir}/black_f.gif";
+white_f ="{$rmdir}/white_f.gif";
+black ="{$rmdir}/black.gif";
+white ="{$rmdir}/white.gif";
+pos5a ="{$rmdir}/5a.gif";
+pos5b ="{$rmdir}/5b.gif";
+imgair = "{$rmdir}/air.gif";
+thisgid = {$gid};
+checkcode = "{$checkcode}";
+//-->
+</script>
+<script language="JavaScript" src="./temp/{$lang_pack}/board.js" type="text/JavaScript">
+</script>
+
+$frame_auto

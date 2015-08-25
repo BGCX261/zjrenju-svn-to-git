@@ -1,0 +1,170 @@
+<script language="JavaScript">
+<!--
+function InsertAvatar()
+{
+	idx = document.medform.avatar_select.selectedIndex;
+	document.medform.u_avatar.value =document.medform.avatar_select.options[idx].value;
+	PreviewAvatar();
+}
+
+function PreviewAvatar()
+{
+	u_avatar = document.medform.u_avatar.value;
+	if(u_avatar=="")u_avatar="default.gif";
+	if( u_avatar.indexOf("/",0) == -1 )
+		u_avatar="../images/avatar/" + u_avatar;
+	document.images.avatar_preview.src = u_avatar;
+}
+
+function ConfirmDelMember()
+{
+	if( window.confirm('确定要删除该用户吗？'))
+		document.location.href="index.php?mode=m_man&action=del&u_name=$encode_name";
+}
+
+//-->
+</script>
+
+<!-- 隔 -->
+<table width = "100%" border="0" cellspacing="0"><tr height="10"><td >&nbsp;</td></tr></table>
+
+
+<table  width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}" bgcolor="$color[cell]">
+<form action="index.php?mode=m_man&action=ed2&u_name=$encode_name" name=medform method=post >
+<tr>
+	<td width="100">用户名</td>
+	<td>
+	<a href="../m_view.php?name=$encode_name" target="_blank">$mdata[u_name]</a> 
+	 $m_stan
+	&nbsp;[<a href="JavaScript:ConfirmDelMember();" >删除该用户</a>]
+	</td>
+</tr>
+
+<tr>
+<td>新密码</td>
+<td><input type=password size=20 maxlength=32 name="new_pass" > 不改密码请留空</td>
+</tr>
+
+<tr>
+<td>验证密码</td>
+<td><input type=password size=20 maxlength=32 name="new_pass2"  > 不改密码请留空</td>
+</tr>
+
+<tr bgcolor="$color[page]">
+<td colspan="2">必填项:</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input type=text size=20 maxlength=60 name="u_email" value="$mdata[u_email]" >
+<input type="checkbox" name="show_email" $check_show_email >公开</td>
+</tr>
+
+<tr>
+<td>性别</td>
+<td>
+<input type=radio name="u_gender" value="1" $check_gender[1] > 男&nbsp;&nbsp;
+<input type=radio name="u_gender" value="2" $check_gender[2] > 女&nbsp;&nbsp;
+<input type=radio name="u_gender" value="0" $check_gender[0] > 保密&nbsp;&nbsp;
+</td>
+</tr>
+
+<tr>
+<td >积分</td>
+<td><input type=text size=20 name="u_skill" value="$mdata[skill]" > </td>
+</tr>
+
+<tr>
+<td >战绩</td>
+<td>
+胜:<input type=text size=4 name="g_w" value="$mdata[g_w]" >
+平:<input type=text size=4 name="g_d" value="$mdata[g_d]" >
+负:<input type=text size=4 name="g_l" value="$mdata[g_l]" >
+掉线:<input type=text size=4 name="g_to" value="$mdata[g_to]" >
+</td>
+</tr>
+
+
+<tr bgcolor="$color[page]">
+<td colspan="2">可选项:</td>
+</tr>
+
+
+<tr>
+<td>来自</td>
+<td>
+<input type=text size=20 maxlength=20 name="u_from" value="$mdata[u_from]" >
+</td>
+</tr>
+
+
+<tr>
+<td>
+QQ
+</td>
+<td>
+<input type=text size=20 maxlength=60 name="u_qq" value="$mdata[u_qq]" >
+</td>
+</tr>
+
+<tr>
+<td>个人主页</td>
+<td>
+<input type=text size=20 maxlength=120 name="u_website" value="$mdata[u_website]" > 
+</td>
+</tr>
+
+<tr>
+<td >好友</td>
+<td><input type=text size=39 maxlength=253 name="u_friends" value="$mdata[friends]" > 
+多个名字用'|'分隔</td>
+</tr>
+<tr>
+<td >黑名单</td>
+<td>
+<input type=text size=39 maxlength=253 name="u_blacklist" value="$mdata[blacklist]" > 
+多个名字用'|'分隔
+</td>
+</tr>
+
+
+<tr>
+<td >
+头像 
+<table width = "100"  style="table-layout: fixed; word-wrap: break-word" >
+<tr height = "100">
+<td align="center">
+<img src="$avatar_url" name="avatar_preview" id="avatar_preview">
+</td>
+</tr>
+</table>
+</td>
+
+<td valign="bottom" align = "left">
+
+<select name=avatar_select  onchange="InsertAvatar();">
+<option selected value="$mdata[u_avatar]">选择头像</option>
+{$avatarlist}
+</select><br />
+
+<input type=text size=38 maxlength=255 name="u_avatar" value="$mdata[u_avatar]"  tabindex=5 onchange="PreviewAvatar();">
+
+</td>
+</tr>
+
+
+<tr>
+<td >自我介绍</td>
+<td>
+<textarea name=u_bio cols=38 rows=5  WRAP  >$mdata[u_bio]</textarea>
+</td>
+</tr>
+
+
+<tr>
+	<td colspan="2">
+		<p align="center"><input type="submit" value="修改"> </p>
+	</td>
+</tr>
+</form>
+</table>

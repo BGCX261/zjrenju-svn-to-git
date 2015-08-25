@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>邀请朋友下棋</title>
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body background="./images/bg.jpg" bgcolor="$color[page]"}>
+
+<table style="table-layout: fixed" width = "100%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<tr bgcolor="$color[heading]" >
+<td>
+邀请朋友下棋
+</td>
+</tr>
+</table>
+
+<table style="table-layout: fixed" width = "100%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<form name="pmform" action="pm_new.php" method="post">
+<tr >
+<td>
+发送给:<input type="text" size="28"  maxlength=16 name="sendto" value="{$sendto}" tabindex="1">
+<select onChange="SelectContact(this.options[this.selectedIndex].value)">
+<option selected value="">选择收件人</option>
+{$contact_options}
+</select>
+<input type="hidden" name="action" value="invite2">
+<input type="submit" value="发送" >
+</td>
+</tr>
+</form>
+</table>
+
+<script language="javascript">
+<!--
+function SelectContact(send_to)
+{ 
+document.pmform.sendto.value = send_to; 
+//document.pmform.message.focus(); 
+}
+
+if(document.pmform.sendto.value =="")
+	document.pmform.sendto.focus(); 
+//else
+//	document.pmform.message.focus(); 
+
+//-->
+</script>
+</script>
+
+</body>
+</html>

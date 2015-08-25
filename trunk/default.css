@@ -1,0 +1,48 @@
+td {
+	COLOR: #333366;
+	font-size: 14px;
+}
+
+A:link {
+	COLOR: #003333;
+	TEXT-DECORATION: none;
+}
+A:active {
+	COLOR: #003333;
+	TEXT-DECORATION: none;
+}
+A:visited {
+	COLOR: #003333;
+	TEXT-DECORATION: none;
+}
+A:hover {
+	COLOR: #990000;
+	TEXT-DECORATION: none;
+}
+
+img{
+	BORDER:0;	
+}
+
+input,textarea, select,button {
+	font-family: 宋体;
+	BACKGROUND-COLOR: #DDEEFF;
+	BORDER: #555555 1px solid;
+}
+
+hr{
+	COLOR: #CCDDFF;
+	HEIGHT: 3px;
+}
+
+.hr2{
+	border-style: groove;
+	/*COLOR: #CCCCCC;*/
+	HEIGHT: 3px;
+}
+
+.frames {
+	border-style: groove ;
+	/*border-color: #CCDDFF;*/
+	/*border-color: #FFFFFF;*/
+}

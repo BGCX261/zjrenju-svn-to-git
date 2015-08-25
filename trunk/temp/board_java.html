@@ -1,0 +1,75 @@
+<!-- 外 -->
+<table width="100%" cellpadding="4" cellSpacing="0" border="0" >
+<tr valign="top">
+<td align="center">
+
+
+		<applet name="board_applet" code="RBBApplet.class" alt="您的浏览器可能不支持JAVA，请在下方的[Board Styles]列表框中选择HTML风格.">
+		<param name="gid" value="$gid">
+		<param name="checkcode" value="$checkcode">
+		<param name="canmove" value="{$canmove}">
+		<param name="moves" value="{$moves}">
+		<param name="step5" value="{$step5}">
+		<param name="pos5a" value="{$pos5a}">
+		<param name="pos5b" value="{$pos5b}">
+		<param name="bgcolor" value="CCDDFF">
+		<param name="linecolor" value="666699">
+		<param name="img_board" value="./images/renju/board.jpg">
+		<!--
+		<param name="img_black" value="./images/renju/black.gif">
+		<param name="img_white" value="./images/renju/white.gif">
+		-->
+		</applet>
+
+
+</td>
+
+<td valign="top" width="250">
+	{$panel}
+</td>
+
+</tr>
+</table>
+
+	<form name="selboard" action="g_view.php">
+	<table width="100%" cellpadding="5" cellSpacing="0" border = "0"  >
+	<tr>
+		<td>
+		<select name="boardstyle" style="background:$color[heading]" onChange="document.selboard.submit()" >
+		<option selected>Board Styles</option>
+		{$board_options}
+		</select>
+		<input type="hidden" name="gid" value="{$gid}">
+		</td>
+
+	</tr>
+	</table>
+	</form>
+	
+
+<script language="javascript">
+<!--
+mcount=$gdata[mcount];
+thisgid=$gid;
+checkcode="{$checkcode}";
+//-->
+
+if(document.all.board_applet)
+{
+	appwidth=screen.availWidth-500;
+	if(appwidth<280) appwidth=280;
+	document.all.board_applet.width=appwidth;
+	document.all.board_applet.height=appwidth;
+}
+else
+{
+	window.alert( "您的浏览器可能不支持JAVA，请在下方的[Board Styles]列表框中选择HTML风格" );
+	document.location.href = "g_view.php?gid=$gid&boardstyle=1024";
+	
+}
+</script>
+
+<script language="JavaScript" src="./lang/{$lang_pack}/board.js" type="text/JavaScript">
+</script>
+
+$frame_auto

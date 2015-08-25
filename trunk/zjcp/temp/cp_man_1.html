@@ -1,0 +1,28 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="index.php?mode=cp_man&action=update&cp_id=$cp_id" name="fmform" method="post">
+
+<tr>
+<td nowrap><b>名称</b></td>
+<td><input type="text" size="70" maxlength="253" name="cp_name" value="$cpdata[cp_name]"></td>
+</tr>
+
+<tr>
+<td nowrap><b>描述</b></td>
+<td><textarea type="text" rows="15" cols="70" name="description">$cpdata[description]</textarea></td>
+</tr>
+
+<tr>
+<td nowrap><b>结束时间</b></td>
+<td>
+<input type="text" size="20" name="enddate" value="$str_enddate"> 
+格式: HH:MM:SS MM/DD/YYYY (没结束请留空)
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" value="更改"></td>
+</tr>
+
+</form>
+</table>

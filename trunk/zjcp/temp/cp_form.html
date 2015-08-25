@@ -1,0 +1,100 @@
+
+
+<form action="index.php?mode=cp_man&action=new2" method=post >
+<table  width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}" bgcolor="$color[cell]">
+
+<tr>
+<td >比赛的名字(标题)</td>
+<td><input type="text" size="45" maxlength="253" name="cp_name" > </td>
+</tr>
+
+<tr>
+<td >详细的描述</td>
+<td>
+<textarea  cols="45" rows="15" name="description" ></textarea>
+</td>
+</tr>
+
+<tr>
+<td >选手名单和分组</td>
+<td>
+<textarea cols="45" rows="15" name="group_player" ></textarea>
+</td>
+</tr>
+
+<tr>
+<td >规则</td>
+<td ><select name="rules"  style="width:80">
+<option value="0">Sakata</option>
+<option selected value="1">RIF</option>
+<option value="2">两次交换</option>
+</select> 
+</td>
+</tr>
+
+
+<tr>
+<td>总限时</td>
+<td><select name="timeadd"  style="width:80">
+<option value="10">10 分钟</option>
+<option value="15">15 分钟</option>
+<option value="20">20 分钟</option>
+<option value="30">30 分钟</option>
+<option value="60">1 小时</option>
+<option value="120">2 小时</option>
+<option value="180">3 小时</option>
+<option value="240">5 小时</option>
+<option value="480">8 小时</option>
+<option value="720">12 小时</option>
+<option value="1440">24 小时</option>
+<option value="1680">28 小时</option>
+<option value="2160">36 小时</option>
+<option value="2880">48 小时</option>
+<option value="4320">3 天</option>
+<option value="7200">5 天</option>
+<option value="10080">7 天</option>
+<option value="14400">10 天</option>
+<option value="20160">15 天</option>
+<option value="28800">20 天</option>
+<option selected value="43200">30 天</option>
+<option value="57600">40 天</option>
+<option value="72000">50 天</option>
+<option value="86400">60 天</option>
+<option value="100800">70 天</option>
+<option value="115200">80 天</option>
+<option value="129600">90 天</option>
+<option value="144000">100 天</option>
+<option value="172800">120 天</option>
+<option value="259200">180 天</option>
+<option value="525600">365 天</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>单步限时</td>
+<td><select name="timestep"  style="width:80">
+<option selected value="0">不作限制</option>
+<option value="1440">1 天</option>
+<option value="2880">2 天</option>
+<option value="4320">3 天</option>
+<option value="7200">5 天</option>
+<option value="10080">7 天</option>
+<option value="14400">10 天</option>
+<option value="21600">15 天</option>
+</select> 
+</td>
+</tr>
+
+<tr>
+<td >开始时间</td>
+<td><input type="text" size="20" name="startdate" value="$str_nowtime"></td>
+</tr>
+
+<tr>
+	<td colspan="2">
+		<p align="center"><input type="submit" value="创建"> </p>
+	</td>
+</tr>
+</table>
+</form>

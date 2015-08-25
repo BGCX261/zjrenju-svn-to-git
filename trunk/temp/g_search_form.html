@@ -1,0 +1,63 @@
+<form method="get" action="g_search.php?action=list">
+<input type="hidden" name="action" value="list" />
+<table width="100%"  cellspacing="0" cellpadding="4" border="1" bordercolor="{$color['border']}" bgcolor="$color[cell]">
+	<tr>
+		<td>
+
+<select name="rules"  style="width:80">
+<option selected value="-1">所有规则</option>
+<option value="0">{$cfg['rules'][0]}</option>
+<option value="1">{$cfg['rules'][1]}</option>
+<option value="2">{$cfg['rules'][2]}</option>
+</select>&nbsp;&nbsp;
+
+<select name="search_time"  style="width:80">
+<option value="-1">所有时间</option>
+<option value="4320">3天内</option>
+<option value="7200">5天内</option>
+<option value="10080">7天内</option>
+<option value="14400">10天内</option>
+<option value="20160">15天内</option>
+<option value="28800">20天内</option>
+<option value="43200">30天内</option>
+<option value="57600">40天内</option>
+<option value="72000">50天内</option>
+<option value="86400">60天内</option>
+<option value="100800">70天内</option>
+<option value="115200">80天内</option>
+<option value="129600">90天内</option>
+<option value="144000">100天内</option>
+<option value="172800">120天内</option>
+<option value="259200">180天内</option>
+<option value="525600">365天内</option>
+</select>&nbsp;&nbsp;
+
+<select name="opening"  style="width:80">
+<option selected value="-1">所有开局</option>
+$openingoption
+</select>
+
+<select name="game_status" >
+<option value="0">所有状态</option>
+<option value="1">进行中的棋局</option>
+<option value="2">已结束的棋局</option>
+<option value="3">禁手局</option>
+<option value="4">和局</option>
+<option value="5">黑胜局</option>
+<option value="6">白胜局</option>
+</select>&nbsp;&nbsp;
+
+<hr />
+
+<input type="radio" name="search_all_user" value="1" checked>所有用户&nbsp;&nbsp;
+
+<input type="radio" name="search_all_user" value="0">指定用户:<input type="text" size=12 maxlength="12" name="u_name" value="" /> 
+<hr />
+<input type="submit" value="开始搜索">
+
+		
+		</td>
+	</tr>
+</table>
+
+</form>

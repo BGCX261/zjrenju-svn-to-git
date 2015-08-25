@@ -1,0 +1,71 @@
+
+<form action="index.php"  method="get">
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]" bgcolor="$color[cell]">
+<input type="hidden" name="mode" value="m_man" />
+<input type="hidden" name="action" value="ed1" />
+<tr bgcolor="$color[heading]">
+<td>
+修改会员资料/删除账号
+</td>
+</tr>
+
+<tr>
+<td>
+输入用户名: <input type=text size=12 maxlength=12 name="u_name">
+<input type="submit" value="查看" >　
+</td>
+</tr>
+
+</table>
+</form>
+
+
+<form action="index.php?mode=m_man&action=banacc" name="banacc" method="post">
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]" bgcolor="$color[cell]">
+<tr bgcolor="$color[heading]">
+<td>
+账号冻结/解冻
+</td>
+</tr>
+
+<tr>
+<td>$ban_accs 
+<input type=text size=12 maxlength=12 name="ban_name">
+<select name="ban_time">
+<option selected value="0">解冻</option>
+<option value="1440">冻结 1 天</option>
+<option value="2880">冻结 2 天</option>
+<option value="4320">冻结 3 天</option>
+<option value="7200">冻结 5 天</option>
+<option value="10080">冻结 7 天</option>
+<option value="20160">冻结 15 天</option>
+<option value="43200">冻结 30 天</option>
+<option value="-1">永久冻结</option>
+</select>
+<input type="submit" value="Go" >
+</td>
+</tr>
+</table>
+</form>
+
+
+
+<form action="index.php"  method="get">
+<table width="100%" border="1" cellpadding="4" cellspacing="0" bordercolor="$color[border]" bgcolor="$color[cell]">
+<input type="hidden" name="mode" value="m_man" />
+<input type="hidden" name="action" value="batch_del1" />
+<tr bgcolor="$color[heading]">
+<td>
+批量删除账号(此操作不可恢复！请谨慎使用)
+</td>
+</tr>
+<td>
+删除 <input type="text" size=4 name="dateline" value="60">
+天没登陆 且 对局少于 
+<input type="text" size=4 name="gameline" value="10">
+的账号
+<input type="submit" value="Go" >
+</td>
+</tr>
+</table>
+</form>

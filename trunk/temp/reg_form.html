@@ -1,0 +1,46 @@
+
+<table width = "100%" border="0" cellspacing="1" cellpadding="4" >
+<tr>
+<td align="left" ><b>请填写以下表单</b></td>
+</tr>
+</table>
+
+
+<table width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="m_man.php" name=regform method="post">
+<tr>
+	<td width="100"><b><label for="reg_name">帐号 (ID)</label></b></td>
+	<td><input type="text" size="20" maxlength="12" name="reg_name" id="reg_name" tabindex=1>
+	</td>
+</tr>
+
+<tr>
+	<td><b><label for="reg_pass">密码 (Password)</label></b></td>
+	<td>
+	<input type="password" size="20" maxlength="32" name="reg_pass" id="reg_pass" tabindex=3>
+	</td>
+</tr>
+
+<tr>
+	<td><b><label for="reg_pass2">验证密码 (Password again)</label></b></td>
+	<td><input type="password" size="20" maxlength="32" name="reg_pass2" id="reg_pass2" tabindex=4></td>
+</tr>
+
+<tr>
+	<td><b><label for="reg_email">邮箱 (Email)</label></b></td>
+	<td><input type="text" size="20" maxlength="60" name="reg_email" id="reg_email" tabindex=4>
+	<input type="checkbox" name="show_email">公开(open)</td>
+</tr>
+
+
+<tr>
+	<td>
+	&nbsp;
+	</td>
+	<td>
+	<input type="hidden" name="action" value="reg2">
+	<input type="submit" value="submit" >
+	</td>
+</tr>
+</form>
+</table>

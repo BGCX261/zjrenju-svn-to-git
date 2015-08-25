@@ -1,0 +1,35 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function ConfirmDellink(l_id)
+{
+	if(window.confirm("确定要删除吗?"))
+	{
+		document.location.href="index.php?mode=l_man&action=del&l_id="+l_id;
+	}
+}
+//-->
+</SCRIPT>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" >
+<tr>
+<td>
+<b>提醒</b> 设置完后需要<a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a>
+</td>
+</tr>
+</table>
+
+<table style="word-break: break-all" width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}" bgcolor="$color[cell]" >
+$full_link
+$logo_link
+$txt_link
+</table>
+
+<table style="word-break: break-all" width = "100%" border="1" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}">
+<tr>
+<td>
+[<a href="index.php?mode=l_man&action=add">添加</a>]
+</td>
+</tr>
+</table>
+
+

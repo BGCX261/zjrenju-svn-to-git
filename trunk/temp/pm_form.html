@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>发送短消息</title>
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body background="./images/bg.jpg" bgcolor= "$color[page]">
+
+<table  width = "100%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<tr bgcolor="$color[heading]" >
+<td>
+发送短消息
+</td>
+</tr>
+</table>
+
+<table width = "100%" border="1" cellspacing="0" bordercolor="{$color['border']}">
+<form name="pmform" action="pm_new.php" method="post">
+<tr >
+<td>
+<table  width="100%" border="0" cellspacing="0" cellpadding="4" bordercolor="{$color['border']}">
+<tr>
+<td>发送给:</td>
+<td>
+<input type="text" size="24"  maxlength=16 name="sendto" value="{$sendto}" tabindex="1">
+<select onChange="SelectContact(this.options[this.selectedIndex].value)">
+<option selected value="">选择收件人</option>
+{$contact_options}
+</select>
+</td>
+</tr>
+<tr>
+<td>消息内容:</td>
+<td>
+<textarea name="message"  rows=5 cols="49" wrap tabindex="2"
+onKeydown="if(event.ctrlKey && window.event.keyCode==13 ) document.pmform.submit();" >{$message}</textarea>
+<input type="hidden" name="action" value="new2">
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="发送" >
+</td>
+</tr>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</form>
+</table>
+
+<script language="javascript">
+<!--
+function SelectContact(send_to)
+{ 
+document.pmform.sendto.value = send_to; 
+document.pmform.message.focus(); 
+}
+
+if(document.pmform.sendto.value =="")
+	document.pmform.sendto.focus(); 
+else
+	document.pmform.message.focus(); 
+
+//-->
+</script>
+</script>
+
+</body>
+</html>

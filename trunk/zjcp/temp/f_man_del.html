@@ -1,0 +1,52 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" >
+<tr>
+<td>
+<b>提醒</b> 设置完后需要<a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a>
+</td>
+</tr>
+</table>
+
+
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+
+<tr>
+<td width="150"><b>版块ID</b></td>
+<td>$fdata[fid]</td>
+</tr>
+
+<tr>
+<td><b>标题</b></td>
+<td><img src="../images/forum/$fdata[ficon]"> $fdata[fname]</td>
+</tr>
+
+<tr>
+<td>描述</td>
+<td>$fdata[description]</td>
+</tr>
+
+<tr>
+<td>主题数</td>
+<td>$fdata[topics]</td>
+</tr>
+
+<tr>
+<td>贴子数</td>
+<td>$fdata[posts]</td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<tr>
+<form action="index.php?mode=f_man&action=del2&fid=$fid" name="fmform" method="post">
+<td>
+<select name="fdispose" onchange="document.fmform.submit_btn.disabled=(this.value==0);">
+<option value="0">请选择贴子的处理方法</option>
+$dispose_option
+<option style="background: $color[cell]" value="-2">不处理 (不推荐)</option>
+<option style="background: $color[cell]" value="-1">全部删除(不推荐)</option>
+</select>&nbsp;<input type="submit" disabled name="submit_btn" value="删除"> [<a href="index.php?mode=f_man">取消</a>]</td>
+</td>
+</form>
+</tr>
+
+</table>

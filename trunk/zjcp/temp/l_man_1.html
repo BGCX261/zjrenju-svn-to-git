@@ -1,0 +1,49 @@
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" >
+<tr>
+<td>
+<OL>提示
+	<LI>同时设置logo和描述的连接显示在最上面，没有描述的只显示logo, 没有logo的显示文字，什么都没有的不显示。
+	<LI>设置完后需要<a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a>
+</OL>
+</td>
+</tr>
+</table>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="index.php" name="fmform" method="post">
+
+<tr>
+<td nowrap><b>文字</b></td>
+<td><input type="text" size="70" maxlength="253"  name="l_txt" value="$ldata[l_txt]"></td>
+</tr>
+
+<tr>
+<td nowrap><b>logo</b></td>
+<td><input type="text" size="70" maxlength="253"  name="l_logo" value="$ldata[l_logo]"></td>
+</tr>
+
+<tr>
+<td nowrap><b>URL</b></td>
+<td><input type="text" size="70" maxlength="253"  name="l_url" value="$ldata[l_url]"></td>
+</tr>
+
+<tr>
+<td nowrap><b>描述</b></td>
+<td><input type="text" size="70" maxlength="253"  name="l_description" value="$ldata[l_description]"></td>
+</tr>
+
+<tr>
+<td nowrap><b>显示顺序</b></td>
+<td><input type="text" size="70" maxlength="5" name="l_displayorder" value="$ldata[l_displayorder]"></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" value="更改"></td>
+<input type="hidden" name="mode" value="l_man">
+<input type="hidden" name="action" value="update">
+<input type="hidden" name="l_id" value="$ldata[l_id]">
+</tr>
+
+</form>
+</table>

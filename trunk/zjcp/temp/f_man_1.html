@@ -1,0 +1,106 @@
+<script language="JavaScript">
+<!--
+function InsertFicon()
+{
+	idx = document.fmform.ficon_select.selectedIndex;
+	document.fmform.ficon.value =document.fmform.ficon_select.options[idx].value;
+	PreviewFicon();
+}
+
+function PreviewFicon()
+{
+	ficon = document.fmform.ficon.value;
+	if(ficon=="")ficon="default.gif";
+	ficon="../images/forum/" + ficon;
+	document.images.ficon_preview.src = ficon;
+}
+
+//-->
+</script>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" >
+<tr>
+<td>
+<b>提醒</b> 设置完后需要<a href="index.php?mode=tools&action=rebuild_cache">刷新系统缓存</a>
+</td>
+</tr>
+</table>
+
+<table width="100%" border="1" cellspacing="0" cellpadding="4" bordercolor="$color[border]" bgcolor="$color[cell]">
+<form action="index.php" name="fmform" method="post">
+
+<tr>
+<td nowrap><b>版块ID</b></td>
+<td>$fdata[fid]</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td nowrap><b>显示顺序</b></td>
+<td><input type="text" maxlength="5" name="displayorder" value="$fdata[displayorder]"></td>
+<td>将按从小到大的顺序显示</td>
+</tr>
+
+<tr>
+<td nowrap><b>标题</b></td>
+<td><input type="text" maxlength="50"  name="fname" value="$fdata[fname]"></td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td nowrap>描述</td>
+<td><input type="text" maxlength="253"  name="description" value="$fdata[description]"></td>
+<td>描述将显示在标题下面，可以用html标记</td>
+</tr>
+
+<tr>
+<td nowrap>图标 <img name="ficon_preview"  src="../images/forum/$ficon"></td>
+<td><input type="text" maxlength="253"  name="ficon" value="$fdata[ficon]"
+onchange="PreviewFicon();"></td>
+<td>
+<select name="ficon_select" onchange="InsertFicon();">
+<option>选择图标</option>
+$ficonlist
+</select>
+自己定制的图标请放到 images/forum/
+</td>
+</tr>
+
+<tr>
+<td nowrap>版主</td>
+<td><input type="text" maxlength="253"  name="moderators" value="$fdata[moderators]"></td>
+<td>多个名字用'|'隔开, 更改版主后需运行"<a href="index.php?mode=tools&action=update_moder">检查版主</a>"工具</td>
+</tr>
+
+<tr>
+<td nowrap>允许访问的会员</td>
+<td><input type="text" maxlength="253"  name="allowmembers" value="$fdata[allowmembers]"></td>
+<td>多个名字用'|'隔开。 如不作限制请留空</td>
+</tr>
+
+<tr>
+<td nowrap>其他</td>
+<td>
+<input type="checkbox" name="is_separator" $is_separator_check > 作为分栏<br />
+<input type="checkbox" name="noguest" $noguest_check > 禁止游客访问<br />
+<input type="checkbox" name="nonew"   $nonew_check > 禁止发新主题 <br />
+<input type="checkbox" name="closed"  $closed_check > 关闭本版块 <br />
+</td>
+<td valign="top">用作分栏的版块只有图标、标题和显示顺序起作用，其他的选项将忽略。
+把版块改为分栏后此版块的贴子不会被删除，但是用户将不能访问他们，除非把该版块又改回来。
+所以我们建议不要把有贴子的版块改为分栏</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+<td><input type="submit" value="更改"></td>
+<td>&nbsp;
+<input type="hidden" name="mode" value="f_man">
+<input type="hidden" name="action" value="update">
+<input type="hidden" name="fid" value="$fdata[fid]">
+</td>
+</tr>
+
+
+</form>
+</table>
